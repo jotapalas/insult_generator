@@ -1,1 +1,4 @@
+markov_python/
+
 .vscode/
+*.pyc
