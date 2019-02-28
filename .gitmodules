@@ -1,0 +1,3 @@
+[submodule "markov_python"]
+	path = markov_python
+	url = https://github.com/Codecademy/markov_python.git
