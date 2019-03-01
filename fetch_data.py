@@ -29,5 +29,13 @@ def get_insults_from_table(table, insult_column, comeback_column):
       for row in table.findAll('tr'):
         columns = row.findAll('td')
         if(len(columns) > 0):
-          insults.append([columns[insult_column].text, columns[comeback_column].text])
+          insult = columns[insult_column].text
+          comeback = columns[comeback_column].text
+          if comeback.startswith('1. '):
+            # This is for one special case where an insult has 2 comebacks in the table
+            comebacks = comeback.split('2. ')
+            insults.append([insult, comebacks[0].replace('1. ','',1)])
+            insults.append([insult, comebacks[1]])
+          else:
+            insults.append([insult, comeback])
   return insults
