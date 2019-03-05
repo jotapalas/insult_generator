@@ -9,7 +9,7 @@ This program uses the [Codecademy implementation](https://github.com/Codecademy/
 Particularly, it fetches insults and makes a random insult/comeback dialog. Right in the style of [Monkey Island's fights](https://monkeyisland.fandom.com/wiki/Insult_Sword_Fighting)!
 
 ## How it does it?
-You just have to run ```python run.py``` and enjoy the battle.
+You just have to run ```python run.py``` and enjoy the battle. The script will feed the Markov chain using this [**Insults API**](https://github.com/jotapalas/insults_api) (crazy, right?)
 
 
 ### Optional
