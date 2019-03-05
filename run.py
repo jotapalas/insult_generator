@@ -1,5 +1,5 @@
 from markov_python.cc_markov import MarkovChain
-from fetch_data import get_insults
+import fetch_data
 
 import sys
 from getopt import getopt
@@ -14,11 +14,14 @@ def format(str):
 
 mc_insults = MarkovChain()
 mc_comebacks = MarkovChain()
-insults = get_insults()
+insults = fetch_data.get_insults()
+comebacks = fetch_data.get_comebacks()
 
 for insult in insults:
-  mc_insults.add_string(insult[0])
-  mc_comebacks.add_string(insult[1])
+  mc_insults.add_string(insult['insult'])
+
+for comeback in comebacks:
+  mc_comebacks.add_string(comeback['comeback'])
 
 count = 1
 optlist, args = getopt(sys.argv[1:], 'c:')
